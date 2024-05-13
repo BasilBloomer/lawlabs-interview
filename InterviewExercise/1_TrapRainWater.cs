@@ -3,7 +3,7 @@ namespace InterviewExercise;
 /// <summary>
 /// Given an array of N non-negative integers arr[] representing an elevation map where the width of each bar is 1,
 /// compute how much water it is able to trap after raining.
-/// See picture rainwater30204filled.png for example inllustrating the problem.
+/// See picture rainwater30204filled.png for example illustrating the problem.
 /// </summary>
 public class TrapRainWater
 {
