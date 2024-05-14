@@ -14,7 +14,7 @@ public class TrapRainWater
     }
 
     [Test]
-    public void Test1()
+    public void MaxWater_202_returns_2()
     {
         // See picture rainwater202.png
         var elevationLevels = new int[] { 2, 0, 2 };
@@ -25,7 +25,7 @@ public class TrapRainWater
     }
 
     [Test]
-    public void Test2()
+    public void MaxMater_30204_returns_7()
     {
         // See picture rainwater30204.png
         var elevationLevels = new int[] { 3, 0, 2, 0, 4 };
@@ -36,7 +36,7 @@ public class TrapRainWater
     }
 
     [Test]
-    public void Test3()
+    public void MaxWAter_010210132121_returns_6()
     {
         // See picture rainwater010210132121.png
         var elevationLevels = new int[] { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 };
