@@ -1,5 +1,7 @@
 # Interview Exercises
 
-1 Ask the candidate to fork this repository.
-2 Run the exercieses in order, trying to make the tests pass.		
-3 Commit the changes and push to the forked repository.
+- Make sure you have .NET 8 installed
+	- https://dotnet.microsoft.com/en-us/download/dotnet/8.0
+- Build the project
+- Run the exercises in order, trying to make the tests pass
+- Ask questions if you are unsure about something
