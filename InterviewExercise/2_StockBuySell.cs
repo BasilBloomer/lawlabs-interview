@@ -22,8 +22,9 @@ public class StockBuySell
             return nTotalProfit;
     }
 
-    [Test]
-    public void Test1()
+    // Uncomment if we actually make it to this exercise
+    //[Test]
+    public void MaxProfit_returns_865()
     {
         var stockPrices = new int[] { 100, 180, 260, 310, 40, 535, 695 };
 
