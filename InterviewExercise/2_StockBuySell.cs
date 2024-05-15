@@ -10,8 +10,16 @@ public class StockBuySell
 {
     static int MaxProfit(IEnumerable<int> stockPrices)
     {
-        // TODO: Implement the solution
-        return 0;
+            int[] anPrices = stockPrices.ToArray();
+            int nTotalProfit = 0;
+
+            for (int a = 1; a < anPrices.Length; a++)
+                // If the current price is higher than the previous one, we can make a profit
+                if (anPrices[a] > anPrices[a - 1])
+                    // Add the profit from this transaction to the total profit
+                    nTotalProfit += anPrices[a] - anPrices[a - 1];
+                    
+            return nTotalProfit;
     }
 
     [Test]

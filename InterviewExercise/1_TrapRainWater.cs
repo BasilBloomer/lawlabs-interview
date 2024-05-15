@@ -9,8 +9,62 @@ public class TrapRainWater
 {
     static int MaxWater(IEnumerable<int> elevationLevels)
     {
-        // TODO: Implement the solution
-        return 0;
+        int [] anLevels=elevationLevels.ToArray<int>();
+        int nMax=fnMax(anLevels);
+        //lowest index of the highest wall:
+        int nLeftMax=0;
+        //highest index of the highest wall:
+        int nRightMax=0;
+        //max yet encountered in the loop:
+        int nMaxYet=0; 
+        //volume of water:
+        int nVolume=0;
+        //calculate nLeftMax
+        for(int a=0;a<anLevels.Length;a++){
+            if(anLevels[a]==nMax){
+                nLeftMax=a;
+                break;
+            }
+        }
+        //calculate nRightMax
+        for(int a=anLevels.Length-1;a>=0;a--){
+            if(anLevels[a]==nMax){
+                nRightMax=a;
+                break;
+            }
+        }
+        //calculate ascending section
+        if(nLeftMax!=0){
+            nMaxYet=anLevels[0];
+            for(int a=0; a<nLeftMax; a++){
+                if(nMaxYet<anLevels[a]) nMaxYet=anLevels[a];
+                nVolume+=nMaxYet-anLevels[a];
+            }
+        }
+        //calculate descending section
+        if(nRightMax!=anLevels.Length){
+            nMaxYet=anLevels[anLevels.Length-1];
+            for(int a=anLevels.Length-1;a>nRightMax;a--){
+                if(nMaxYet<anLevels[a]) nMaxYet=anLevels[a];
+                nVolume+=nMaxYet-anLevels[a];
+            }
+        }
+        //calculate middle section
+        if(nLeftMax!=nRightMax){
+            for(int a=nLeftMax+1; a<nRightMax; a++)
+                nVolume+=nMax-anLevels[a];
+        }
+        return nVolume;
+    }
+
+    static int fnMax(int[] array){
+        int nMax = array[0];
+
+        for (int a = 1; a < array.Length; a++)
+            if (array[a] > nMax) 
+                nMax = array[a];
+
+        return nMax;
     }
 
     [Test]
